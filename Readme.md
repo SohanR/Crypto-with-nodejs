@@ -4,6 +4,7 @@
 
 - [Hash](#hash)
 - [Salt](#salt)
+- [HMAC](#hmac)
 
 <section id='hash'/>
 
@@ -22,7 +23,7 @@ The important thing here is that the function will always produce the **Same out
 
         SAME INPUT => SAME OUTPUT
 
-It's need to be fast to compute and unique, however its extremely difficult for a computer to Reverse Engineer what the original massage actually was.
+It's need to be fast to compute and unique, however its extremely difficult for a computer to Reverse Engineer what the original message actually was.
 
 Real example of Hash is, storing password on a database.
 
@@ -46,3 +47,28 @@ Therefore making it more harder to guess.
 In nodeJS we can hash a password with salt by importing **scryptSync** and **randomeBytes** function.
 
 See the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/02.salt.js)
+
+<br>
+<br>
+
+<sectio id='hmac' />
+
+## HMAC: HASH-BASED MESSAGE AUTHENTICATION CODE
+
+HMAC is HASH that also required a password. So the only person can create the same hash signature, must also have the corresponding password or key.
+
+<br>
+
+An example is Json web token for authentication on web.
+
+<br>
+
+In nodeJS we can import the createHmac function then we will define a secret key along with the message that we want to hash.
+
+<br>
+We can create hash like we do in [Hash](https://github.com/SohanR/Crypto-with-nodejs/blob/master/01.hash.js), the only different is we also provide this key.
+The important things to notice here is that we got the same hash if the same password used, but if we use different password we got entirely different hash.
+
+<br>
+
+See the full [implementation](https://github.com/SohanR/Crypto-with-nodejs/blob/master/03.hmac.js)
