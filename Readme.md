@@ -25,4 +25,4 @@ It's need to be fast to compute and unique, however its extremely difficult for 
 
 Real example of Hash is, storing password on a database.
 
-[Click here]() to see the implementation of **Hash**.
+[Click here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/01.hash.js) to see the implementation of **Hash**.
