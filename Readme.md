@@ -7,6 +7,7 @@
 - [HMAC](#hmac)
 - [Encrypt](#encrypt)
 - [KeyPairs](#keypairs)
+- [Asymmentric Encryption](#asymmentric)
 
 <section id='hash'/>
 
@@ -129,3 +130,29 @@ Private key should always be keep secrete and the public key can be share with o
 In node we can generate public and private key pairs using the **generateKeypairSync** function.
 
 See the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/05.keyPairs.js)
+
+<br>
+<br>
+
+<section id='asymmentric' />
+
+## Asymmentric Encryption
+
+We use **Asymmentric Encryption** anytime we go to a website using **HTTPS**.
+
+<br>
+
+The browser will automatically find a public key of an SSL certificate installed on the website.
+
+That public key is used to encrypt any data that you send to the website.
+
+Your data is then decrypt it with the private key by the trusted website.
+
+The implementation of nodeJS is very simple. We import **publicEncrypt** and **privateDecrypt** from nodeJS **Crypto**
+
+        const { publicEncrypt, privateDecrypt } = require('crypto');
+
+See the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/06.asymmentric.js)
+
+<br>
+<br>
