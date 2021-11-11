@@ -8,6 +8,7 @@
 - [Encrypt](#encrypt)
 - [KeyPairs](#keypairs)
 - [Asymmentric Encryption](#asymmentric)
+- [SignIn](#signin)
 
 <section id='hash'/>
 
@@ -156,3 +157,17 @@ See the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/
 
 <br>
 <br>
+
+<section id='signin' />
+
+## SignIn
+
+SignIn is basically digital signature.
+
+The sender of the message will use their private key to sign a hash of the original message.The private key guaranties authenticity and hash guaranties that the message can be temper with. Because its produce entirely different signature.
+
+The recipient can use the public key to validate the authenticity of the message.
+
+In nodeJS we can create a signature with **createSign** function
+
+See the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/07.sign.js)
