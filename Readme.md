@@ -5,6 +5,7 @@
 - [Hash](#hash)
 - [Salt](#salt)
 - [HMAC](#hmac)
+- [Encrypt](#encrypt)
 
 <section id='hash'/>
 
@@ -51,7 +52,7 @@ See the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/
 <br>
 <br>
 
-<sectio id='hmac' />
+<section id='hmac' />
 
 ## HMAC: HASH-BASED MESSAGE AUTHENTICATION CODE
 
@@ -66,9 +67,43 @@ An example is Json web token for authentication on web.
 In nodeJS we can import the createHmac function then we will define a secret key along with the message that we want to hash.
 
 <br>
+
 We can create hash like we do in [Hash](https://github.com/SohanR/Crypto-with-nodejs/blob/master/01.hash.js), the only different is we also provide this key.
 The important things to notice here is that we got the same hash if the same password used, but if we use different password we got entirely different hash.
 
 <br>
 
 See the full [implementation](https://github.com/SohanR/Crypto-with-nodejs/blob/master/03.hmac.js)
+
+<br>
+<br>
+
+<section id="encrypt" />
+
+## Encrypt
+
+[HMAC](#hmac) is cool, but what happens when you want to share a secret with someone and also allow them to read the original message.
+
+<br>
+
+That's where the **Encryption** comes in.
+
+### What is Encryption exactly ?
+
+In Encryption we take a message, scramble of the bytes to make it unreadable. That's called the **Cipher Text**.
+
+<br>
+
+Then provide a key or password, allowing somebody else to decrypted it.
+
+<br>
+
+It's also typically randomized. So that each time you encrypt, you get an entirely different encrypted output **Even if the key and message are the same**.
+
+<br>
+
+To implement in NodeJS we are going to import **createCipheriv** (iv stands for Initialization Vector), along with **randomBytes** and **createDecipher**.
+
+        const { createCipheriv, randomBytes, createDecipheriv } = require('crypto');
+
+Look at the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/04.encrypt.js)
