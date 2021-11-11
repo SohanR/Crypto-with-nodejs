@@ -6,6 +6,7 @@
 - [Salt](#salt)
 - [HMAC](#hmac)
 - [Encrypt](#encrypt)
+- [KeyPairs](#keypairs)
 
 <section id='hash'/>
 
@@ -107,3 +108,24 @@ To implement in NodeJS we are going to import **createCipheriv** (iv stands for 
         const { createCipheriv, randomBytes, createDecipheriv } = require('crypto');
 
 Look at the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/04.encrypt.js)
+
+<br>
+<br>
+
+<section id='keypairs' />
+
+**KeyPairs** is **Public-key CryptoSystem**.
+
+<br>
+
+Instead of one key, it uses two keys that mathematically linked. A private key and a Public key.
+
+<br>
+
+Private key should always be keep secrete and the public key can be share with other people.
+
+<br>
+
+In node we can generate public and private key pairs using the **generateKeypairSync** function.
+
+See the full implementation [here](https://github.com/SohanR/Crypto-with-nodejs/blob/master/05.keyPairs.js)
